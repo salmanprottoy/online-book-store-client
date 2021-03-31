@@ -9,10 +9,10 @@ const BookElement = ({ book }) => {
       <td>{book.authorName}</td>
       <td>${book.bookPrice}</td>
       <td>
-        <button className="btn btn-success">
+        <button className="btn btn-success mr-1">
           <FontAwesomeIcon className="m-auto" icon={faEdit} />
         </button>
-        <button className="btn btn-danger">
+        <button className="btn btn-danger ml-1">
           <FontAwesomeIcon className="m-auto" icon={faTrashAlt} />
         </button>
       </td>
