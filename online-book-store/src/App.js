@@ -55,21 +55,21 @@ function App() {
               <Signup />
               <Footer />
             </Route>
-            <Route path="/editBook">
+            <PrivateRoute path="/editBook">
               <Sidebar />
               <EditBook />
               <Footer />
-            </Route>
-            <Route path="/addBook">
+            </PrivateRoute>
+            <PrivateRoute path="/addBook">
               <Sidebar />
               <AddBook />
               <Footer />
-            </Route>
-            <Route path="/manageBook">
+            </PrivateRoute>
+            <PrivateRoute path="/manageBook">
               <Sidebar />
               <ManageBook />
               <Footer />
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <Header />
               <NoMatch />
