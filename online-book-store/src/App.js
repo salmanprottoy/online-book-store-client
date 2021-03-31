@@ -1,25 +1,65 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createContext } from "react";
+import { useState } from "react";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Orders from "./components/Orders/Orders";
+import Admin from "./components/Admin/Admin";
+import NoMatch from "./components/NoMatch/NoMatch";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Signup from "./components/Signup/Signup";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggerInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[loggerInUser, setLoggedInUser]}>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <PrivateRoute path="/orders">
+              <Header />
+              <Orders />
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
+              <Header />
+              <Admin />
+              <Footer />
+            </PrivateRoute>
+            <Route path="/deals">
+              <Header />
+
+              <Footer />
+            </Route>
+            <Route path="/login">
+              <Header />
+              <Login />
+              <Footer />
+            </Route>
+            <Route path="/signup">
+              <Header />
+              <Signup />
+              <Footer />
+            </Route>
+            <Route path="*">
+              <Header />
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </UserContext.Provider>
   );
 }
 
