@@ -1,11 +1,35 @@
-import React from 'react';
+import React from "react";
+import { Table } from "react-bootstrap";
+import { useEffect } from "react";
+import { useState } from "react";
+import BookElement from "../BookElement/BookElement";
 
 const ManageBook = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/books")
+      .then((res) => res.json())
+      .then((data) => setBooks(data));
+  }, []);
+  return (
+    <div className="container mt-5">
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map((book) => (
+            <BookElement book={book}></BookElement>
+          ))}
+        </tbody>
+      </Table>
+    </div>
+  );
 };
 
 export default ManageBook;
