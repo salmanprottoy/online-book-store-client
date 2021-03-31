@@ -1,3 +1,5 @@
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -17,9 +19,12 @@ const Home = () => {
   return (
     <div className="home">
       <Header />
-      <div className="m-2 p-3">
+      <div className="container p-3">
         <input className="" type="text" />
-        <button className="btn btn-info">Search</button>
+        <br />
+        <button className="btn btn-info m-2">
+          <FontAwesomeIcon className="m-auto" icon={faSearch} /> Search
+        </button>
       </div>
       <div className="row row-cols-md-3 justify-content-center p-5">
         {books.map((book) => (

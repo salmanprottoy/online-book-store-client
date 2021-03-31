@@ -1,10 +1,10 @@
 import React from "react";
-import AddBook from "../AddBook/AddBook";
+import ManageBook from "../ManageBook/ManageBook";
 
 const Admin = () => {
   return (
     <div>
-      <AddBook />
+      <ManageBook />
     </div>
   );
 };
