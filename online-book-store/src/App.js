@@ -11,6 +11,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Signup from "./components/Signup/Signup";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 export const UserContext = createContext();
 
@@ -33,13 +34,12 @@ function App() {
               <Footer />
             </PrivateRoute>
             <PrivateRoute path="/admin">
-              <Header />
+              <Sidebar />
               <Admin />
               <Footer />
             </PrivateRoute>
             <Route path="/deals">
               <Header />
-
               <Footer />
             </Route>
             <Route path="/login">
@@ -50,6 +50,18 @@ function App() {
             <Route path="/signup">
               <Header />
               <Signup />
+              <Footer />
+            </Route>
+            <Route path="/editBook">
+              <Sidebar />
+              <Footer />
+            </Route>
+            <Route path="/addBook">
+              <Sidebar />
+              <Footer />
+            </Route>
+            <Route path="/manageBook">
+              <Sidebar />
               <Footer />
             </Route>
             <Route path="*">

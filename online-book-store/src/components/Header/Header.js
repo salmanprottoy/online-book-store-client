@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
@@ -51,46 +51,6 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      {/* <Navbar bg="light" variant="light">
-        <Navbar.Brand>
-          <Link className="nav-link" to="/">
-            City Riding Service
-          </Link>
-        </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link>
-            <Link className="nav-link" to="/home">
-              Home
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            <Link class="nav-link" to="/destination">
-              Destination
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            <Link className="nav-link" to="/blog">
-              Blog
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            <Link className="nav-link" to="/contact">
-              Contact
-            </Link>
-          </Nav.Link>
-          <Nav.Link href="">
-            {loggerInUser.name ? (
-              <Link className="nav-link" to="/">
-                {loggerInUser.name}
-              </Link>
-            ) : (
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
-            )}
-          </Nav.Link>
-        </Nav>
-      </Navbar> */}
     </div>
   );
 };
