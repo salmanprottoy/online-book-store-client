@@ -12,6 +12,9 @@ import Footer from "./components/Footer/Footer";
 import Signup from "./components/Signup/Signup";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Sidebar from "./components/Sidebar/Sidebar";
+import AddBook from "./components/AddBook/AddBook";
+import EditBook from "./components/EditBook/EditBook";
+import ManageBook from "./components/ManageBook/ManageBook";
 
 export const UserContext = createContext();
 
@@ -54,14 +57,17 @@ function App() {
             </Route>
             <Route path="/editBook">
               <Sidebar />
+              <EditBook />
               <Footer />
             </Route>
             <Route path="/addBook">
               <Sidebar />
+              <AddBook />
               <Footer />
             </Route>
             <Route path="/manageBook">
               <Sidebar />
+              <ManageBook />
               <Footer />
             </Route>
             <Route path="*">
