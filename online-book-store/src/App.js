@@ -15,6 +15,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import AddBook from "./components/AddBook/AddBook";
 import EditBook from "./components/EditBook/EditBook";
 import ManageBook from "./components/ManageBook/ManageBook";
+import Checkout from "./components/Checkout/Checkout";
 
 export const UserContext = createContext();
 
@@ -55,6 +56,11 @@ function App() {
               <Signup />
               <Footer />
             </Route>
+            <PrivateRoute path="/checkout/:key">
+              <Header />
+              <Checkout />
+              <Footer />
+            </PrivateRoute>
             <PrivateRoute path="/editBook">
               <Sidebar />
               <EditBook />

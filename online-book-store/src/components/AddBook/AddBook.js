@@ -58,28 +58,19 @@ const AddBook = () => {
         </div>
         <div className="form-group">
           <p className="text-info">Add Book Cover Photo </p>
-          <input name="bookPhoto" type="file" onChange={handleImgUpload} />
+          <input
+            className=""
+            name="bookPhoto"
+            type="file"
+            onChange={handleImgUpload}
+          />
         </div>
-        <input type="submit" />
+        <input
+          className="btn btn-info text-white"
+          type="submit"
+          value="Add Book"
+        />
       </form>
-      {/* <form action="" className="border border-info p-3 m-2 rounded">
-        <div className="form-group">
-          <p className="text-info">Book Name </p>
-          <input type="text" name="bookName" placeholder="" required />
-        </div>
-        <div className="form-group">
-          <p className="text-info">Author Name </p>
-          <input type="text" name="authorName" placeholder="" required />
-        </div>
-        <div className="form-group">
-          <p className="text-info">Add Price </p>
-          <input type="text" name="bookPrice" placeholder="" required />
-        </div>
-        <div className="form-group">
-          <p className="text-info">Add Book Cover Photo </p>
-          <input type="file" name="bookPhoto" placeholder="" required />
-        </div>
-      </form> */}
     </div>
   );
 };
