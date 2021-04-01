@@ -13,8 +13,8 @@ const BookElement = ({ book }) => {
       .then((response) => response.json())
       .then((result) => {
         if (result) {
-          alert("Order confirmed");
-          history.push("/manageBook");
+          alert("Book Deleted!");
+          history.push("/home");
         }
       });
   };

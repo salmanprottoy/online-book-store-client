@@ -2,8 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AddBook = () => {
+  const history = useHistory();
   const { register, handleSubmit, watch, errors } = useForm();
   const [imgURL, setImgURL] = useState(null);
   const handleImgUpload = (event) => {
@@ -37,7 +39,14 @@ const AddBook = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(bookData),
-    }).then((response) => console.log("server response", response));
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result) {
+          alert("Book Added!");
+          history.push("/manageBook");
+        }
+      });
   };
   return (
     <div className="">
