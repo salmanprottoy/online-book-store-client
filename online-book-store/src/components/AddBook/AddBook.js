@@ -31,7 +31,7 @@ const AddBook = () => {
       bookPrice: data.bookPrice,
       imgURL: imgURL,
     };
-    const url = "http://localhost:5000/addBook";
+    const url = "https://banana-custard-69431.herokuapp.com/addBook";
     console.log(bookData);
     fetch(url, {
       method: "POST",

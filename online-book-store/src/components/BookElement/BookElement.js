@@ -7,7 +7,7 @@ const BookElement = ({ book }) => {
   const history = useHistory();
   const deleteBook = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://banana-custard-69431.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

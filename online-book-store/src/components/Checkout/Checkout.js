@@ -14,7 +14,7 @@ const Checkout = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/book/${key}`)
+    fetch(`https://banana-custard-69431.herokuapp.com/book/${key}`)
       .then((res) => res.json())
       .then((data) => {
         setBook(data);
@@ -29,7 +29,7 @@ const Checkout = () => {
       orderTime: new Date(),
     };
 
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://banana-custard-69431.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "content-type": "application/json",
