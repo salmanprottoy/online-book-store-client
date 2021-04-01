@@ -23,6 +23,7 @@ const AddBook = () => {
   };
   const onSubmit = (data) => {
     const bookData = {
+      key: data.bookKey,
       bookName: data.bookName,
       authorName: data.authorName,
       bookPrice: data.bookPrice,
@@ -44,6 +45,10 @@ const AddBook = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="border border-info p-3 m-2 rounded"
       >
+        <div className="form-group">
+          <p className="text-info">Book Key </p>
+          <input name="bookKey" defaultValue="" ref={register} />
+        </div>
         <div className="form-group">
           <p className="text-info">Book Name </p>
           <input name="bookName" defaultValue="" ref={register} />
