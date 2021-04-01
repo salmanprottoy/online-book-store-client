@@ -4,7 +4,6 @@ import { UserContext } from "../../App";
 
 const Order = (props) => {
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
-  console.log(props.order);
   return (
     <tbody>
       {loggerInUser.email === props.order.email && (
