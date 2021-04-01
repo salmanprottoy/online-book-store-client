@@ -17,7 +17,6 @@ const Checkout = () => {
     fetch(`http://localhost:5000/book/${key}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setBook(data);
       });
   }, []);
@@ -29,8 +28,6 @@ const Checkout = () => {
       price: book.bookPrice,
       orderTime: new Date(),
     };
-
-    console.log(orderDetails);
 
     fetch("http://localhost:5000/addOrder", {
       method: "POST",
