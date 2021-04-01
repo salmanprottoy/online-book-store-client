@@ -6,8 +6,10 @@ import { Table } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../App";
 import { useHistory } from "react-router-dom";
+import * as ReactBootstrap from "react-bootstrap";
 
 const Checkout = () => {
+  const [loading, setLoading] = useState(false);
   const [loggerInUser, setLoggedInUser] = useContext(UserContext);
   const [book, setBook] = useState([]);
   const { key } = useParams();
@@ -18,6 +20,7 @@ const Checkout = () => {
       .then((res) => res.json())
       .then((data) => {
         setBook(data);
+        setLoading(true);
       });
   }, []);
 
@@ -46,6 +49,11 @@ const Checkout = () => {
   };
   return (
     <div className="container mt-5">
+      {loading ? (
+        <br />
+      ) : (
+        <ReactBootstrap.Spinner animation="border" variant="info" />
+      )}
       <h2 className="text-info text-left m-2 p-2">Checkout</h2>
       <Table striped bordered hover>
         <thead>
