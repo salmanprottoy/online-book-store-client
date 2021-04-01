@@ -1,6 +1,6 @@
 # Online Book Store 
 
-A react project that can be use as book selling perform.
+A node application build using react library that can be use as book selling perform.
 
 ---
 ## Live site ⚡
