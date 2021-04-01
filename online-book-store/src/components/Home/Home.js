@@ -37,7 +37,7 @@ const Home = () => {
         <ReactBootstrap.Spinner animation="border" variant="info" />
       )}
 
-      <div className="row row-cols-md-3 justify-content-center p-5">
+      <div className="row row-cols-md-3 justify-content-center p-5 m-auto">
         {books.map((book) => (
           <Books book={book}></Books>
         ))}
